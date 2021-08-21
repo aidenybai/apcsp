@@ -1,0 +1,25 @@
+{
+  "name": "notes",
+  "version": "0.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "bump": "git add . && git commit -m 'notes 1629560280775' && git push",
+    "note": "touch \"notes-$(date '+%Y-%m-%d-%H:%M:%S').md\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aidenybai/apcsp.git"
+  },
+  "keywords": [
+    "notes",
+    "apcsp"
+  ],
+  "author": "Aiden Bai <hello@aidenybai.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aidenybai/apcsp/issues"
+  },
+  "homepage": "https://github.com/aidenybai/apcsa/tree/main/notes#readme"
+}
