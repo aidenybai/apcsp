@@ -2,7 +2,7 @@ import { access, mkdir, writeFile } from 'fs/promises';
 import { exec } from 'child_process';
 
 const stringify = (json: object): string => JSON.stringify(json, null, 2);
-const README = (projectName: string): string => `# ${projectName}
+const README = (projectName: string): string => `# [${projectName}](https://apcsp.netlify.app/${projectName})
 
 Run \`pnpm bump\` to push to github
 
