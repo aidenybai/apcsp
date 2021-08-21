@@ -1,6 +1,31 @@
 import { access, mkdir, writeFile } from 'fs/promises';
 import { exec } from 'child_process';
 
+const start = async (): Promise<void> => {
+  const projectName = process.argv.slice(2).join(' ').toLowerCase().replace(/\s+/g, '-');
+  const projectPath: string = `${__dirname}/${projectName}`;
+
+  try {
+    await access(projectPath);
+    throw new Error('Path already exists');
+  } catch (_err) {
+    await mkdir(projectPath);
+
+    const files = {
+      'README.md': README(projectName),
+      '.prettierrc': prettierrc,
+      'package.json': package_json(projectName),
+    };
+
+    Object.entries(files).forEach(async ([name, content]) => {
+      await writeFile(`${projectPath}/${name}`, content);
+    });
+
+    exec(`code ${projectName}`);
+    console.log(`Created project ${projectName} successfully`);
+  }
+};
+
 const stringify = (json: object): string => JSON.stringify(json, null, 2);
 const README = (
   projectName: string,
@@ -41,19 +66,4 @@ const prettierrc = stringify({
   tabWidth: 2,
 });
 
-(async (): Promise<void> => {
-  const projectName = process.argv.slice(2).join(' ').toLowerCase().replace(/\s+/g, '-');
-  const projectPath: string = `${__dirname}/${projectName}`;
-
-  try {
-    await access(projectPath);
-    throw new Error('Path already exists');
-  } catch (_err) {
-    await mkdir(projectPath);
-    await writeFile(`${projectPath}/README.md`, README(projectName));
-    await writeFile(`${projectPath}/.prettierrc`, prettierrc);
-    await writeFile(`${projectPath}/package.json`, package_json(projectName));
-    exec(`code ${projectName}`);
-    console.log(`Created project ${projectName} successfully`);
-  }
-})();
+start();
