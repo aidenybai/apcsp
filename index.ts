@@ -2,7 +2,9 @@ import { access, mkdir, writeFile } from 'fs/promises';
 import { exec } from 'child_process';
 
 const stringify = (json: object): string => JSON.stringify(json, null, 2);
-const README = (projectName: string): string => `# [${projectName}](https://apcsp.netlify.app/${projectName})
+const README = (
+  projectName: string,
+): string => `# [${projectName}](https://apcsp.netlify.app/${projectName})
 
 Run \`pnpm bump\` to push to github
 
@@ -40,7 +42,7 @@ const prettierrc = stringify({
 });
 
 (async (): Promise<void> => {
-  const projectName = process.argv[2].toLowerCase().replace(/\s+/g, '-');
+  const projectName = process.argv.slice(2).join(' ').toLowerCase().replace(/\s+/g, '-');
   const projectPath: string = `${__dirname}/${projectName}`;
 
   try {
