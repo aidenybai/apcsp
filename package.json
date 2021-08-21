@@ -4,7 +4,7 @@
   "description": "Repository to store all my AP Computer Science Principles projects (2021-22)",
   "main": "index.ts",
   "scripts": {
-    "create": "ts-node index.ts",
+    "new": "ts-node index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
