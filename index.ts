@@ -39,23 +39,10 @@ const package_json = (projectName: string): string =>
   stringify({
     name: projectName,
     version: '0.0.0',
-    description: '',
-    main: '',
     scripts: {
       bump: `git add . && git commit -m '${projectName} ${Date.now()}' && git push`,
       test: 'echo "Error: no test specified" && exit 1',
     },
-    repository: {
-      type: 'git',
-      url: 'git+https://github.com/aidenybai/apcsp.git',
-    },
-    keywords: [projectName, 'apcsp'],
-    author: 'Aiden Bai <hello@aidenybai.com>',
-    license: 'MIT',
-    bugs: {
-      url: 'https://github.com/aidenybai/apcsp/issues',
-    },
-    homepage: `https://github.com/aidenybai/apcsa/tree/main/${projectName}#readme`,
   });
 
 const prettierrc = stringify({
