@@ -1,0 +1,24 @@
+{
+  "name": "example-for-will",
+  "version": "0.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "bump": "git add . && git commit -m 'example-for-will 1629576511965' && git push",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aidenybai/apcsp.git"
+  },
+  "keywords": [
+    "example-for-will",
+    "apcsp"
+  ],
+  "author": "Aiden Bai <hello@aidenybai.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aidenybai/apcsp/issues"
+  },
+  "homepage": "https://github.com/aidenybai/apcsa/tree/main/example-for-will#readme"
+}
