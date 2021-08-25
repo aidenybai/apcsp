@@ -5,3 +5,7 @@ Repository to store all my AP Computer Science Principles projects (2021-22).
 ```sh
 pnpm new example-project-name
 ```
+
+```sh
+pnpm open existing-project-name
+```
