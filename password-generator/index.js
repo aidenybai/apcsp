@@ -27,4 +27,7 @@ const passwordGenerator = (serviceName) => {
   return abbr;
 };
 
+console.log(passwordGenerator('Facebook'));
 console.log(passwordGenerator('Twitter'));
+console.log(passwordGenerator('Discord'));
+console.log(passwordGenerator('GitHub'));
